@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristiane Martins | Links</title>
+  <meta name="description" content="Links da Cristiane Martins — Social Media para Médicos." />
+  <meta name="robots" content="noindex" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cristiane Martins | Social Media para Médicos" />
+  <meta property="og:description" content="Transformo perfis médicos em referências digitais." />
+  <meta property="og:image" content="assets/img/sobre-cristiane.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:    #c9a84c;
+      --black:   #0a0a0a;
+      --dark:    #111111;
+      --dark-2:  #1a1a1a;
+      --white:   #f5f5f0;
+      --gray:    #888;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Fundo com gradiente sutil */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(201,168,76,.05) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Avatar */
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(201,168,76,.5);
+      box-shadow: 0 0 0 4px rgba(201,168,76,.12);
+      margin-bottom: 4px;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Nome e tag */
+    .profile__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      text-align: center;
+    }
+    .profile__tag {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-top: 2px;
+    }
+    .profile__bio {
+      font-size: .85rem;
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      line-height: 1.6;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* Divisor */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(201,168,76,.3);
+    }
+
+    /* Botões */
+    .btn-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      letter-spacing: .02em;
+    }
+    .btn-link:hover {
+      transform: translateY(-3px);
+    }
+    .btn-link:active {
+      transform: translateY(0);
+    }
+
+    /* WhatsApp */
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37,211,102,.3);
+    }
+    .btn-whatsapp:hover {
+      background: #20bc5a;
+      box-shadow: 0 8px 28px rgba(37,211,102,.45);
+    }
+
+    /* Site */
+    .btn-site {
+      background: var(--gold);
+      color: var(--black);
+      box-shadow: 0 4px 20px rgba(201,168,76,.3);
+    }
+    .btn-site:hover {
+      background: #d9b85a;
+      box-shadow: 0 8px 28px rgba(201,168,76,.45);
+    }
+
+    /* Instagram */
+    .btn-instagram {
+      background: var(--dark-2);
+      color: var(--white);
+      border: 1px solid rgba(201,168,76,.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .btn-instagram:hover {
+      background: #222;
+      border-color: rgba(201,168,76,.4);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    }
+
+    /* Ícones SVG */
+    .btn-link svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    /* Rodapé */
+    .footer {
+      margin-top: 16px;
+      font-size: .72rem;
+      color: rgba(255,255,255,.2);
+      text-align: center;
+    }
+    .footer a {
+      color: rgba(201,168,76,.4);
+      text-decoration: none;
+    }
+    .footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Avatar -->
+    <div class="avatar">
+      <img src="assets/img/sobre-cristiane.jpg" alt="Cristiane Martins" />
+    </div>
+
+    <!-- Perfil -->
+    <div>
+      <p class="profile__name">Cristiane Martins</p>
+      <p class="profile__tag">Social Media para Médicos</p>
+      <p class="profile__bio">Transformo perfis médicos em referências digitais.<br />Especialista em Instagram para médicos e clínicas de estética.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5581999505816?text=Olá%20Cristiane!%20Vim%20pelo%20seu%20Instagram%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços."
+       class="btn-link btn-whatsapp"
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.123 1.522 5.866L.061 23.939a.75.75 0 00.909.909l6.073-1.461A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.742 9.742 0 01-4.987-1.374l-.357-.213-3.706.893.907-3.706-.213-.357A9.742 9.742 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Chamar no WhatsApp
+    </a>
+
+    <!-- Site -->
+    <a href="https://cristianemartinscomunica.com.br"
+       class="btn-link btn-site"
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      Acessar meu site
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/cristianemartinscomunica?igsh=Z25sOGVmeW93dzdi"
+       class="btn-link btn-instagram"
+       target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      @cristianemartinscomunica
+    </a>
+
+    <!-- Rodapé -->
+    <p class="footer">
+      © 2025 Cristiane Martins · Site por <a href="https://firstsite.com.br" target="_blank" rel="noopener">firstsite.com.br</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
