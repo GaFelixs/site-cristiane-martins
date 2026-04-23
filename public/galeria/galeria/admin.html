@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="admin-page">
+
+  <header class="app-header">
+    <div class="app-header__inner">
+      <span class="logo-name">Painel Admin</span>
+      <div class="app-header__right">
+        <button class="btn-logout" id="btnLogout">Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main container">
+
+    <!-- Abas -->
+    <div class="tabs">
+      <button class="tab active" data-tab="clientes">Clientes</button>
+      <button class="tab" data-tab="upload">Upload de Fotos</button>
+      <button class="tab" data-tab="selecoes">Seleções</button>
+    </div>
+
+    <!-- ABA: Clientes -->
+    <section class="tab-content active" id="tab-clientes">
+      <div class="section-header">
+        <h2>Clientes</h2>
+        <button class="btn-primary btn-sm" id="btnNovoCliente">+ Novo cliente</button>
+      </div>
+
+      <!-- Formulário novo cliente -->
+      <div class="form-card" id="formNovoCliente" style="display:none;">
+        <h3>Cadastrar cliente</h3>
+        <div class="form-group">
+          <label>Nome completo</label>
+          <input type="text" id="clienteNome" placeholder="Nome do cliente" />
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" id="clienteEmail" placeholder="email@exemplo.com" />
+        </div>
+        <div class="form-group">
+          <label>Senha</label>
+          <input type="password" id="clienteSenha" placeholder="Senha de acesso" />
+        </div>
+        <p class="form-error" id="clienteError"></p>
+        <div class="form-actions">
+          <button class="btn-primary" id="btnSalvarCliente">Salvar</button>
+          <button class="btn-secondary" id="btnCancelarCliente">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="clientes-lista" id="clientesLista">
+        <p class="loading-text">Carregando clientes...</p>
+      </div>
+    </section>
+
+    <!-- ABA: Upload -->
+    <section class="tab-content" id="tab-upload">
+      <h2>Upload de Fotos</h2>
+
+      <div class="form-card">
+        <div class="form-group">
+          <label>Cliente</label>
+          <select id="uploadCliente">
+            <option value="">Selecione o cliente</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ensaio</label>
+          <div class="ensaio-row">
+            <select id="uploadEnsaio">
+              <option value="">Selecione o ensaio</option>
+            </select>
+            <button class="btn-secondary btn-sm" id="btnNovoEnsaio">+ Novo ensaio</button>
+          </div>
+        </div>
+
+        <!-- Novo ensaio inline -->
+        <div class="form-group" id="novoEnsaioGroup" style="display:none;">
+          <label>Título do ensaio</label>
+          <div class="ensaio-row">
+            <input type="text" id="novoEnsaioTitulo" placeholder="Ex: Ensaio Família Janeiro 2025" />
+            <button class="btn-primary btn-sm" id="btnCriarEnsaio">Criar</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Fotos (máx. 100 por vez, até 20MB cada)</label>
+          <div class="upload-area" id="uploadArea">
+            <input type="file" id="uploadInput" multiple accept="image/*" style="display:none;" />
+            <p>Arraste as fotos aqui ou <span class="link-click" id="uploadClick">clique para selecionar</span></p>
+          </div>
+          <div class="upload-preview" id="uploadPreview"></div>
+        </div>
+
+        <p class="form-error" id="uploadError"></p>
+        <p class="form-success" id="uploadSuccess"></p>
+
+        <button class="btn-primary" id="btnEnviarFotos">Enviar fotos</button>
+      </div>
+    </section>
+
+    <!-- ABA: Seleções -->
+    <section class="tab-content" id="tab-selecoes">
+      <h2>Seleções dos clientes</h2>
+
+      <div class="form-group">
+        <label>Selecionar cliente</label>
+        <select id="selecaoCliente">
+          <option value="">Escolha um cliente</option>
+        </select>
+      </div>
+
+      <div class="selecoes-resultado" id="selecoesResultado"></div>
+    </section>
+
+  </main>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
